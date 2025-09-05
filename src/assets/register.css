@@ -1,0 +1,345 @@
+/* assets/register.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+:root {
+  --primary: #1976D2;
+  --primary-dark: #0D47A1;
+  --primary-light: #BBDEFB;
+  --accent: #00BFA5;
+  --text: #263238;
+  --text-light: #78909C;
+  --background: #F5F9FF;
+  --white: #FFFFFF;
+  --error: #FF5252;
+  --success: #4CAF50;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.register-medical-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.medical-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.medical-pattern {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 20%, var(--primary-light) 0%, transparent 8%),
+    radial-gradient(circle at 80% 80%, var(--primary-light) 0%, transparent 8%);
+  background-size: 50px 50px;
+  opacity: 0.3;
+}
+
+.register-medical-card {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(13, 71, 161, 0.15);
+  width: 100%;
+  max-width: 500px;
+  z-index: 1;
+  position: relative;
+}
+
+.medical-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.medical-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  color: var(--primary);
+}
+
+.medical-logo i {
+  font-size: 28px;
+  margin-right: 10px;
+}
+
+.medical-logo h1 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.medical-logo span {
+  color: var(--accent);
+}
+
+.medical-header h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+
+.medical-header p {
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+.medical-register-form {
+  margin-bottom: 20px;
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.form-row .input-medical-group {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.input-medical-group {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.input-medical-group i {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary);
+  font-size: 16px;
+  z-index: 2;
+}
+
+.input-medical-group input,
+.input-medical-group select {
+  color : black;
+  width: 100%;
+  padding: 12px 12px 12px 45px;
+  border: 2px solid #E3F2FD;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  background-color: #F9FBFE;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.input-medical-group select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231976D2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 14px;
+}
+
+.input-medical-group input:focus,
+.input-medical-group select:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.2);
+}
+
+.medical-options {
+  margin: 15px 0;
+  font-size: 13px;
+}
+
+.medical-checkbox {
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+  line-height: 1.4;
+}
+
+.medical-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  flex-shrink: 0;
+  height: 18px;
+  width: 18px;
+  background-color: #E3F2FD;
+  border-radius: 4px;
+  margin-right: 8px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.medical-checkbox input:checked ~ .checkmark {
+  background-color: var(--primary);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.medical-checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.medical-checkbox a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.medical-checkbox a:hover {
+  text-decoration: underline;
+}
+
+.medical-btn {
+  width: 100%;
+  padding: 12px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.medical-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(13, 71, 161, 0.3);
+}
+
+.medical-btn:active {
+  transform: translateY(0);
+}
+
+.medical-footer {
+  text-align: center;
+  border-top: 1px solid #E3F2FD;
+  padding-top: 20px;
+}
+
+.medical-footer p {
+  color: var(--text-light);
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.medical-footer a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.medical-footer a:hover {
+  text-decoration: underline;
+}
+
+.medical-features {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+  color: var(--text-light);
+}
+
+.feature i {
+  font-size: 16px;
+  margin-bottom: 4px;
+  color: var(--primary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .register-medical-card {
+    padding: 25px 20px;
+  }
+  
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .medical-logo h1 {
+    font-size: 22px;
+  }
+  
+  .medical-header h2 {
+    font-size: 18px;
+  }
+  
+  .medical-features {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .medical-checkbox {
+    font-size: 12px;
+  }
+  
+  .medical-options {
+    margin: 12px 0;
+  }
+  
+  .medical-features {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .feature {
+    flex-direction: row;
+    gap: 8px;
+  }
+  
+  .feature i {
+    margin-bottom: 0;
+  }
+}

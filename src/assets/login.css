@@ -1,0 +1,316 @@
+/* assets/login.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+:root {
+  --primary: #1976D2;
+  --primary-dark: #0D47A1;
+  --primary-light: #BBDEFB;
+  --accent: #00BFA5;
+  --text: #263238;
+  --text-light: #78909C;
+  --background: #F5F9FF;
+  --white: #FFFFFF;
+  --error: #FF5252;
+  --success: #4CAF50;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.login-medical-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.medical-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.medical-pattern {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 20%, var(--primary-light) 0%, transparent 8%),
+    radial-gradient(circle at 80% 80%, var(--primary-light) 0%, transparent 8%);
+  background-size: 50px 50px;
+  opacity: 0.3;
+}
+
+.login-medical-card {
+  background: var(--white);
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(13, 71, 161, 0.15);
+  width: 100%;
+  max-width: 440px;
+  z-index: 1;
+  position: relative;
+}
+
+.medical-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.medical-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  color: var(--primary);
+}
+
+.medical-logo i {
+  font-size: 32px;
+  margin-right: 10px;
+}
+
+.medical-logo h1 {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.medical-logo span {
+  color: var(--accent);
+}
+
+.medical-header h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.medical-header p {
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+.medical-login-form {
+  margin-bottom: 25px;
+}
+
+.input-medical-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-medical-group i {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary);
+  font-size: 18px;
+}
+
+.input-medical-group input {
+  width: 100%;
+  padding: 15px 15px 15px 50px;
+  border: 2px solid #E3F2FD;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background-color: #F9FBFE;
+}
+
+.input-medical-group input:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.2);
+}
+
+.medical-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  font-size: 14px;
+}
+
+.medical-checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.medical-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  height: 20px;
+  width: 20px;
+  background-color: #E3F2FD;
+  border-radius: 5px;
+  margin-right: 8px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.medical-checkbox input:checked ~ .checkmark {
+  background-color: var(--primary);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.medical-checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.medical-forgot {
+  color: var(--primary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.medical-forgot:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+.medical-btn {
+  width: 100%;
+  padding: 15px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.medical-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(13, 71, 161, 0.3);
+}
+
+.medical-btn:active {
+  transform: translateY(0);
+}
+
+.medical-alternative {
+  text-align: center;
+  border-top: 1px solid #E3F2FD;
+  padding-top: 20px;
+}
+
+.medical-alternative p {
+  color: var(--text-light);
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.medical-alternative a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.medical-alternative a:hover {
+  text-decoration: underline;
+}
+
+.medical-features {
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid #E3F2FD;
+  padding-top: 25px;
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+  color: var(--text-light);
+}
+
+.feature i {
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: var(--primary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .login-medical-card {
+    padding: 30px 20px;
+  }
+  
+  .medical-logo h1 {
+    font-size: 24px;
+  }
+  
+  .medical-header h2 {
+    font-size: 20px;
+  }
+  
+  .medical-features {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .feature {
+    flex-direction: row;
+    gap: 10px;
+  }
+  
+  .feature i {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .medical-options {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .medical-forgot {
+    margin-left: 28px;
+  }
+}
